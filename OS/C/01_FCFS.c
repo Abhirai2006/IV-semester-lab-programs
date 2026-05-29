@@ -1,6 +1,5 @@
 /*
  * Program  : First Come First Serve (FCFS) CPU Scheduling
- * Author   : [Your Name]
  * Subject  : Operating Systems Lab
  *
  * Description:

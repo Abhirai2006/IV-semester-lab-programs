@@ -1,6 +1,5 @@
 /*
  * Program  : Shortest Job First (SJF) CPU Scheduling — Non-Preemptive
- * Author   : [Your Name]
  * Subject  : Operating Systems Lab
  *
  * Description:
