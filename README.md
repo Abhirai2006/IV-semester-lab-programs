@@ -6,7 +6,7 @@ A curated collection of lab programs across 4 subjects.
 
 ```
 college-lab-programs/
-├── OS/                  # Operating Systems (C + Python)
+├── OS/                  # Operating Systems (C & Python)
 │   ├── C/
 │   └── Python/
 ├── CPP/                 # C++ Programs
