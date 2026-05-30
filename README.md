@@ -30,7 +30,7 @@ college-lab-programs/
 
 | # | Program |
 |---|---------|
-| 1 | FCFS CPU Scheduling | [FCFS CPU Scheduling](OS/C/01_fcfs.c) |
+| 1 | FCFS CPU Scheduling | [FCFS CPU Scheduling](OS/C/01_FCFS.c) |
 | 2 | SJF CPU Scheduling |
 | 3 | Priority CPU Scheduling |
 | 4 | Producer-Consumer Problem (Semaphores) |
