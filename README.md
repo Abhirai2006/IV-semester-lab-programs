@@ -5,7 +5,7 @@ A curated collection of lab programs across 4 subjects.
 ## 📁 Repository Structure
 
 ```
-college-lab-programs/
+IV-semester-lab-programs/
 ├── OS/                  # Operating Systems (C & Python)
 │   ├── C/
 │   └── Python/
