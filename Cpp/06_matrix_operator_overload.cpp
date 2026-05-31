@@ -1,6 +1,5 @@
 /*
  * Program  : Matrix Addition Using Operator Overloading
- * Author   : [Your Name]
  * Subject  : C++ Lab
  *
  * Description:

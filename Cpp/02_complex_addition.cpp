@@ -1,6 +1,5 @@
 /*
  * Program  : Addition of Two Complex Numbers Using Friend Function
- * Author   : [Your Name]
  * Subject  : C++ Lab
  *
  * Description:

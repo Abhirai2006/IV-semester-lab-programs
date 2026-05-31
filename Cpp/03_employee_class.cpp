@@ -1,6 +1,5 @@
 /*
  * Program  : Employee Class with Salary Computation
- * Author   : [Your Name]
  * Subject  : C++ Lab
  *
  * Description:

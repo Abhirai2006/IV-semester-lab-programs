@@ -1,6 +1,5 @@
 /*
  * Program  : Display Student Names, Roll Numbers, and Grades
- * Author   : [Your Name]
  * Subject  : C++ Lab
  *
  * Description:

@@ -1,6 +1,5 @@
 /*
  * Program  : Swap Two Integers Using Reference Variables
- * Author   : [Your Name]
  * Subject  : C++ Lab
  *
  * Description:

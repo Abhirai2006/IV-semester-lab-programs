@@ -1,6 +1,5 @@
 /*
  * Program  : String Class with Operator Overloading (== and +)
- * Author   : [Your Name]
  * Subject  : C++ Lab
  *
  * Description:
