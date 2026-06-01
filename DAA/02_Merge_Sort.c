@@ -9,50 +9,71 @@
 
 #include <stdio.h>
 
-void merge(int arr[], int l, int m, int r) {
-    int left_len  = m - l + 1;
-    int right_len = r - m;
+/*
+ * merge: merges two sorted halves of arr[] back into one sorted segment.
+ *   left_start  : starting index of the left half
+ *   mid         : ending index of the left half
+ *   right_end   : ending index of the right half
+ */
+void merge(int arr[], int left_start, int mid, int right_end) {
+    int left_len  = mid - left_start + 1;
+    int right_len = right_end - mid;
 
-    int L[left_len], R[right_len];
+    int left_arr[left_len];
+    int right_arr[right_len];
 
+    /* Copy data into temporary arrays */
     for (int i = 0; i < left_len;  i++)
-        L[i] = arr[l + i];
+        left_arr[i]  = arr[left_start + i];
     for (int j = 0; j < right_len; j++)
-        R[j] = arr[m + 1 + j];
+        right_arr[j] = arr[mid + 1 + j];
 
-    int i = 0, j = 0, k = l;
-    while (i < left_len && j < right_len)
-        arr[k++] = (L[i] <= R[j]) ? L[i++] : R[j++];
+    int left_idx  = 0;        /* index for left_arr  */
+    int right_idx = 0;        /* index for right_arr */
+    int merged_idx = left_start;  /* index for merged arr */
 
-    while (i < left_len)
-        arr[k++] = L[i++];
-    while (j < right_len)
-        arr[k++] = R[j++];
+    /* Merge the two halves in sorted order */
+    while (left_idx < left_len && right_idx < right_len) {
+        if (left_arr[left_idx] <= right_arr[right_idx])
+            arr[merged_idx++] = left_arr[left_idx++];
+        else
+            arr[merged_idx++] = right_arr[right_idx++];
+    }
+
+    /* Copy remaining elements */
+    while (left_idx  < left_len)
+        arr[merged_idx++] = left_arr[left_idx++];
+    while (right_idx < right_len)
+        arr[merged_idx++] = right_arr[right_idx++];
 }
 
-void mergeSort(int arr[], int l, int r) {
-    if (l < r) {
-        int m = l + (r - l) / 2;
-        mergeSort(arr, l, m);
-        mergeSort(arr, m + 1, r);
-        merge(arr, l, m, r);
+/*
+ * mergeSort: recursively divides arr[left_start..right_end] and sorts it.
+ */
+void mergeSort(int arr[], int left_start, int right_end) {
+    if (left_start < right_end) {
+        int mid = left_start + (right_end - left_start) / 2;
+
+        mergeSort(arr, left_start, mid);          /* sort left half  */
+        mergeSort(arr, mid + 1,    right_end);    /* sort right half */
+        merge(arr, left_start, mid, right_end);   /* merge both      */
     }
 }
 
 int main(void) {
-    int n, arr[100];
+    int size, arr[100];
 
     printf("Enter number of elements: ");
-    scanf("%d", &n);
+    scanf("%d", &size);
 
-    printf("Enter %d elements:\n", n);
-    for (int i = 0; i < n; i++)
+    printf("Enter %d elements:\n", size);
+    for (int i = 0; i < size; i++)
         scanf("%d", &arr[i]);
 
-    mergeSort(arr, 0, n - 1);
+    mergeSort(arr, 0, size - 1);
 
     printf("Sorted array: ");
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < size; i++)
         printf("%d ", arr[i]);
     printf("\n");
 
