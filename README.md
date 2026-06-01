@@ -50,5 +50,12 @@ IV-semester-lab-programs/
 | 5 | [05_string_operator_overload.cpp](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/Cpp/05_string_operator_overload.cpp) | String Operator Overloading (== and +) |
 | 6 | [06_matrix_operator_overload.cpp](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/Cpp/06_matrix_operator_overload.cpp) | Matrix Addition (Operator Overloading) |
 
+## 🖥️ DAA Programs Covered
+
+| # | File | Topic | Category | Complexity |
+|---|------|-------|----------|------------|
+| 1 | [01_Binary_Search.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/01_Binary_Search.c) | Binary Search | Searching | O(log n) |
+| 2 | [02_Merge_Sort.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/02_Merge_Sort.c) | Merge Sort | Divide & Conquer | O(n log n) |
+
 ---
 > Programs are written for academic/learning purposes.
