@@ -1,69 +1,69 @@
 /*
- * Program  : Dijkstra's Shortest Path Algorithm
+ * Program  : Fractional Knapsack (Greedy)
  * Subject  : Design and Analysis of Algorithms Lab
- * Category : Greedy / Graph
- * Complexity: O(V²)
+ * Category : Greedy
+ * Complexity: O(n log n)
  *
- * Aim: Find the shortest path from a source vertex to all other vertices
- *      in a weighted graph with non-negative edge weights.
+ * Aim: Maximise total profit by selecting items (or fractions thereof)
+ *      to fill a knapsack of given capacity.
  */
 
 #include <stdio.h>
 
-#define INF 99999
+typedef struct {
+    int   weight;
+    int   profit;
+    float value_density;  /* profit per unit weight = profit / weight */
+} Item;
+
+/* Sort items descending by value density (bubble sort) */
+void sortByValueDensity(Item items[], int num_items) {
+    for (int i = 0; i < num_items - 1; i++) {
+        for (int j = i + 1; j < num_items; j++) {
+            if (items[i].value_density < items[j].value_density) {
+                Item temp = items[i];
+                items[i]  = items[j];
+                items[j]  = temp;
+            }
+        }
+    }
+}
 
 int main(void) {
-    int num_vertices;
-    printf("Enter number of vertices: ");
-    scanf("%d", &num_vertices);
+    int num_items, capacity;
+    printf("Enter number of items and knapsack capacity: ");
+    scanf("%d %d", &num_items, &capacity);
 
-    int cost[20][20];
-    printf("Enter cost matrix (%d for no direct edge):\n", INF);
-    for (int row = 0; row < num_vertices; row++)
-        for (int col = 0; col < num_vertices; col++)
-            scanf("%d", &cost[row][col]);
-
-    int source;
-    printf("Enter source vertex (0-indexed): ");
-    scanf("%d", &source);
-
-    int shortest_dist[20];  /* shortest_dist[v] = shortest known distance from source to v */
-    int finalized[20];      /* finalized[v] = 1 means shortest path to v is confirmed      */
-
-    for (int vertex = 0; vertex < num_vertices; vertex++) {
-        shortest_dist[vertex] = cost[source][vertex];
-        finalized[vertex]     = 0;
+    Item items[20];
+    printf("Enter weight and profit for each item:\n");
+    for (int i = 0; i < num_items; i++) {
+        scanf("%d %d", &items[i].weight, &items[i].profit);
+        items[i].value_density = (float)items[i].profit / items[i].weight;
     }
-    shortest_dist[source] = 0;
-    finalized[source]     = 1;
 
-    for (int iteration = 0; iteration < num_vertices - 1; iteration++) {
-        /* Pick the unfinalized vertex with the smallest known distance */
-        int chosen = -1;
-        for (int vertex = 0; vertex < num_vertices; vertex++)
-            if (!finalized[vertex] && (chosen == -1 || shortest_dist[vertex] < shortest_dist[chosen]))
-                chosen = vertex;
+    sortByValueDensity(items, num_items);
 
-        if (shortest_dist[chosen] == INF) break;  /* remaining vertices are unreachable */
+    float total_profit    = 0.0f;
+    int   remaining_space = capacity;
 
-        finalized[chosen] = 1;
-
-        /* Relax edges: update distance via chosen vertex if shorter */
-        for (int neighbour = 0; neighbour < num_vertices; neighbour++) {
-            if (!finalized[neighbour] &&
-                cost[chosen][neighbour] != INF &&
-                shortest_dist[chosen] + cost[chosen][neighbour] < shortest_dist[neighbour])
-                shortest_dist[neighbour] = shortest_dist[chosen] + cost[chosen][neighbour];
+    printf("\nItems selected:\n");
+    for (int i = 0; i < num_items && remaining_space > 0; i++) {
+        if (items[i].weight <= remaining_space) {
+            /* Take the whole item */
+            printf("  Item (w=%d, p=%d) — taken fully\n",
+                   items[i].weight, items[i].profit);
+            total_profit    += items[i].profit;
+            remaining_space -= items[i].weight;
+        } else {
+            /* Take the fraction that fills the remaining space */
+            float fraction = (float)remaining_space / items[i].weight;
+            printf("  Item (w=%d, p=%d) — taken %.2f fraction\n",
+                   items[i].weight, items[i].profit, fraction);
+            total_profit   += items[i].profit * fraction;
+            remaining_space = 0;
         }
     }
 
-    printf("\nShortest distances from vertex %d:\n", source);
-    for (int vertex = 0; vertex < num_vertices; vertex++) {
-        if (shortest_dist[vertex] == INF)
-            printf("  To vertex %d : unreachable\n", vertex);
-        else
-            printf("  To vertex %d : %d\n", vertex, shortest_dist[vertex]);
-    }
-
+    printf("Maximum Profit = %.2f\n", total_profit);
     return 0;
 }
