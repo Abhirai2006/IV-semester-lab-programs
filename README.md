@@ -67,4 +67,12 @@ IV-semester-lab-programs/
 | 10 | [10_Dijkstra.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/10_Dijkstra.c) | Dijkstra's Shortest Path | Greedy / Graph | O(V²) |
 
 ---
+
+## 🖥️ Graph Algorithm Programs
+
+| # | File | Topic | Type |
+|---|------|-------|------|
+| 1 | [01_Topological_Sort.py](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/Graph%20Algorithms/01_Topological_Sort.py) | Topological Sort | DFS |
+
+---
 > Programs are written for academic/learning purposes.
