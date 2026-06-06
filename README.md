@@ -72,7 +72,7 @@ IV-semester-lab-programs/
 
 | # | File | Topic | Type |
 |---|------|-------|------|
-| 1 | [01_Topological_Sort.py](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/Graph%20Algorithms/01_Topological_Sort.py) | Topological Sort | DFS |
+| 1 | [01_Topological_Sort.py](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/GA/01_Topological_Sort.py) | Topological Sort | DFS |
 
 ---
 > Programs are written for academic/learning purposes.
