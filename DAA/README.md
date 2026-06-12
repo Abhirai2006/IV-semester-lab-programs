@@ -12,3 +12,6 @@
 | 8 | [08_Job_Sequencing.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/08_Job_Sequencing.c) | Job Sequencing with Deadlines | Greedy | O(n²) |
 | 9 | [09_Prims_MST.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/09_Prims_MST.c) | Prim's MST | Greedy / Graph | O(V²) |
 | 10 | [10_Dijkstra.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/10_Dijkstra.c) | Dijkstra's Shortest Path | Greedy / Graph | O(V²) |
+| 11 | [11_Huffman_Coding.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/11_Huffman_Coding.c) | Huffman Coding | Greedy | O(n log n) |
+| 12 | [12_Knapsack_DP.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/12_Knapsack_DP.c) | 0/1 Knapsack | Dynamic Programming | O(nW) |
+| 13 | [13_Floyd_Warshall.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/13_Floyd_Warshall.c) | Floyd-Warshall All-Pairs SP | Dynamic Programming | O(V³) |
