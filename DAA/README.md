@@ -15,3 +15,5 @@
 | 11 | [11_Huffman_Coding.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/11_Huffman_Coding.c) | Huffman Coding | Greedy | O(n log n) |
 | 12 | [12_Knapsack_DP.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/12_Knapsack_DP.c) | 0/1 Knapsack | Dynamic Programming | O(nW) |
 | 13 | [13_Floyd_Warshall.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/13_Floyd_Warshall.c) | Floyd-Warshall All-Pairs SP | Dynamic Programming | O(V³) |
+| 14 | [14_N_Queens.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/14_N_Queens.c) | N-Queens Problem | Backtracking | O(N!) |
+| 15 | [15_TSP_Branch_Bound.c](https://github.com/Abhirai2006/IV-semester-lab-programs/blob/main/DAA/15_TSP_Branch_Bound.c) | Travelling Salesman Problem | Branch & Bound | Exponential |
