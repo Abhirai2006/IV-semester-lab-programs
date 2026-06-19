@@ -1,6 +1,6 @@
 # 🎓 MUSE IV Sem Lab Programs
 
-A curated collection of lab programs across 4 subjects.
+A curated collection of lab programs across 4 subjects. {DA, OS, C++, Graph}
 
 > 📌 This repository is intended for **Mysore University School of Engineering** students for their **IV Semester Lab**. All programs here are not exactly as in the manual — they have been corrected and improved so that the output is accurate to the question/aim.
 
